@@ -153,3 +153,11 @@ if DEBUG:
     DEBUG_TOOLBAR_CONFIG = {
         'INTERCEPT_REDIRECTS': False,
     }
+
+    def custom_show_toolbar(request):
+        return bool(DEBUG)
+
+    DEBUG_TOOLBAR_CONFIG = {
+        'SHOW_TOOLBAR_CALLBACK': custom_show_toolbar,
+    }
+
